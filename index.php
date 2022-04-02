@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -42,7 +44,7 @@
             <!-- Formulário para pesquisa -->
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Faça sua pesquisa" aria-label="Search">
-              <button class="btn btn-info" type="submit">Pesquisar</button>
+              <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Pesquisar</button>
             </form>
           </div>
         </div>
@@ -98,38 +100,42 @@
       <h2 class="text-center mb-4">Produtos</h2>
       <div class="container">
         <div class="row">          
-          <div class="col-6 col-md-4">
-            <div class="card">
-              <img src="assets/images/playstation.webp" class="card-img-top w-50 mx-auto" alt="...">
-              <div class="card-body">
-                <h5 id="product" class="card-title">Playstation 5</h5>
-                <p class="card-text">Some quick example text to build on the Playstation 5 and make up the bulk of the card's content.</p>
-                <a href="#" id="btn-pay" class="btn btn-primary">Comprar</a>
-              </div>
-            </div>
-          </div>
+          
+            <?php
+                $products = [
+                    'Playston 5',
+                    'Xbox One',
+                    'Super Nintendo',
+                    'Mega Drive',
+                    'Master Sytem',
+                    'Atari',
+                    'Tele Jogo',
+                ];             
+            ?>
 
-          <div class="col-6 col-md-4">
-            <div class="card">
-              <img src="assets/images/playstation.webp" class="card-img-top w-50 mx-auto" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Playstation 5</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-              </div>
-            </div>
-          </div>
+            <?php foreach($products as $product): ?>
+                <div class="col-xl-3 col-md-6 col-sm-12">
+                    <div class="card">
+                        <img src="assets/images/playstion5.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $product; ?></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach;?>
+            <!-- <div class="col-6 col-md-4">
+                <div class="card">
+                <img src="assets/images/playstation.webp" class="card-img-top w-50 mx-auto" alt="...">
+                <div class="card-body">
+                    <h5 id="product" class="card-title">Playstation 5</h5>
+                    <p class="card-text">Some quick example text to build on the Playstation 5 and make up the bulk of the card's content.</p>
+                    <a href="#" id="btn-pay" class="btn btn-primary">Comprar</a>
+                </div>
+                </div>
+            </div> -->
 
-          <div class="col-2 col-md-4">
-            <div class="card">
-              <img src="assets/images/playstation.webp" class="card-img-top w-50 mx-auto" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Comprar</a>
-              </div>
-            </div>
-          </div>          
         </div>
       </div>
     </section>
@@ -145,6 +151,28 @@
         </div>
       </div>
     </footer>
+
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/app.js"></script>
